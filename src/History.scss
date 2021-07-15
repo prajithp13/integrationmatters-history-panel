@@ -1,0 +1,166 @@
+.im-history-panel {
+  position: relative;
+  min-height: 100px;
+  min-width: 350px;
+  font-family: 'system-ui', sans-serif;
+
+  .diagram-container {
+    height: 55%;
+    width: 100%;
+    background-color: #f7f8fa;
+
+    .chart {
+      width: 100%;
+      height: 100%;
+
+      &.green {
+        .bar,
+        .polyline {
+          fill: green;
+        }
+
+        .polyline {
+          stroke: green;
+        }
+      }
+
+      &.red {
+        .bar,
+        .polyline {
+          fill: darkred;
+        }
+
+        .polyline {
+          stroke: darkred;
+        }
+      }
+
+      .bar {
+        opacity: .5;
+      }
+
+      .polyline {
+        stroke: #464c54;
+        vector-effect: non-scaling-stroke;
+      }
+
+      .polyline {
+        fill-opacity: .5;
+        stroke-width: 3;
+      }
+    }
+  }
+
+  .main-text {
+    font-size: 60px;
+    line-height: 60px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translateX(-50%) translateY(-50%);
+
+    .percentage {
+      padding: 0 20px;
+      display: inline-block;
+    }
+
+    .trend {
+      display: inline-block;
+      width: 60px;
+      text-align: center;
+
+      &.green {
+        color: green;
+      }
+
+      &.red {
+        color: darkred;
+      }
+    }
+  }
+
+  .comparison {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    font-weight: 100;
+
+    .compare-text {
+      .value {
+        opacity: .7;
+      }
+    }
+
+    .compare-text,
+    .compare-values {
+      margin: auto;
+      width: 300px;
+
+      .value {
+        width: 100px;
+        display: inline-block;
+        font-size: 20px;
+        line-height: 20px;
+
+        &.green {
+          color: green;
+        }
+
+        &.red {
+          color: darkred;
+        }
+      }
+
+      .spacer {
+        width: 100px;
+        display: inline-block;
+      }
+    }
+  }
+
+  &.s {
+    .diagram-container {
+      height: 40%;
+    }
+
+    .main-text {
+      top: 60%;
+    }
+  }
+
+  &.xs {
+    .diagram-container {
+      height: 40%;
+    }
+
+    .main-text {
+      top: 55%;
+    }
+  }
+
+  &.xxs {
+    .main-text {
+      top: 75%;
+    }
+
+    .compare-text,
+    .compare-values {
+      display: none;
+    }
+  }
+
+  &.xxxs {
+    .diagram-container {
+      height: 100%;
+    }
+
+    .main-text,
+    .compare-text,
+    .compare-values {
+      display: none;
+    }
+  }
+}
